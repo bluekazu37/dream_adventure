@@ -8,6 +8,7 @@ html {
 body {
     line-height: 32px;
     width:100%;
+    font-family: sans-serif;
 }
 a {
     text-decoration: none;
