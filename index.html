@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Adventure</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css"> 
+    <link rel="icon" type="image/png" href="image/戦のアイコン.png" />
+    <!--ツールチップ出現用のアニメーションを指定するCSS。※導入方法は後程解説。読み込まなくてもフェードインで出現します。-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tippy.js@5.0.3/animations/shift-toward-subtle.css">
+    <!--ツールチップの色を指定するCSS。。※導入方法は後程解説。読み込まなくても黒色で出現します。-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tippy.js@5.0.3/themes/light-border.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+  <body>
+    <!--ヘッダー-->
+    <header class="page-header wrapper">
+      <h1>
+        <a href="index.html"><img src="image/dream_adventure_header_icon-2-cutout.png" class="logo1" /></a>
+      </h1>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="">News</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </nav>
+      <!--ハンバーガーメニュー-->
+      <div class="overlay" id="js-overlay"></div><!--ハンバーガーメニュー出現後の黒透過背景-->
+      <div class="hamburger" id="js-hamburger"><!--ハンバーガーアイコン-->
+        <span class="hamburger__lineTop"></span>
+        <span class="hamburger__lineCenter"></span>
+        <span class="hamburger__lineBottom"></span>
+      </div>
+      <div class="sideMenu">
+        <nav>
+          <ul class="sideMenu_nav" id="js-sideMenu_li">
+            <li>
+              <a class="sideMenu_li" href="#">News</a>
+            </li>
+            <li>
+              <a class="sideMenu_li" href="#">Contact</a>
+            </li>
+            <li>
+              <a class="sideMenu_li" href="#">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <!--トップ画-->
+    <div class="top-image wrapper">
+      <h2 class="page-title">Dream Adventure</h2>
+      <p>寝ているあいだに冒険しませんか</p>
+      <a href="#start" class="button btnshine shiny-btn3 shiny-btn8 modal-open cap" data-tippy-content="<div class='inner-cap'><p>今なら冒険者応援パックプレゼント中！！</p></div>">冒険を始める</a>
+    </div>
+    <!--ログイン画面-->
+    <form action="#" class="login-form" id="start">
+      <label>お名前</label><br>
+      <input class="text-line" type="name" name="name" value="" placeholder="冒険太郎(ゲーム内で表示される名前)"><br>
+      <label>メールアドレス</label><br>
+      <input class="text-line" type="email" name="email-address" value="" placeholder="xxxx@example.com"><br>
+      <label>パスワード</label><br>
+      <input class="text-line" type="password" name="passward" value="" maxlength="8" placeholder="〜8文字で入力"><br>
+      <p><input class="form-btn" type="submit" value="登録"></p>
+    </form>
+
+    <!--About-->
+    <main class="main-content">
+      <div class="about">
+        <h1>About</h1>
+        <p>最近ワクワクしてますか？</p>
+        <p>Dream Adventureでは寝ているあいだに冒険を楽しめます。</p>
+        <p>冒険を進める主人公はあなた自身です。</p>
+        <p>さぁ冒険に出かけましょう！</p>
+      </div>
+      <!--モード選択-->
+      <div class="mode-select">
+        <h1>Mode</h1>
+        <p>
+          睡眠に入る前に選択してください。睡眠に入ると選択したモードを開始することができます。
+        </p>
+        <div class="container">
+          <div class="item fadeUpTrigger">
+            <div class="mode">
+              <a href="#"></a>
+              <span class="mask">
+              <img src="image/italy-2273767_1920.jpg" class="mode-pic" />
+              </span>
+            </div>
+            <div class="">
+              <h3>ストーリー</h3>
+              <p>
+                魔王に支配された世界に平和をもたらすために始まりの街から冒険を始めましょう。倒れてしまうと30日間プレイできなくなります。
+              </p>
+            </div>
+          </div>
+          <div class="item fadeUpTrigger delay-time05">
+            <div class="mode">
+              <a href="#"></a>
+              <span class="mask">
+              <img src="image/colosseum-4308831_1920.jpg" class="mode-pic" />
+            </span>
+            </div>
+            <div class="">
+              <h3>闘技場</h3>
+              <p>
+                ストーリーモードで鍛えた力を使い、次々と現れる敵と闘います。倒れてもペナルティはありません。
+              </p>
+            </div>
+          </div>
+          <div class="item fadeUpTrigger delay-time10">
+            <div class="mode">
+              <a href="#"></a>
+              <span class="mask">
+              <img src="image/road-sign-798175_1920.jpg" class="mode-pic" />
+            </span>
+            </div>
+            <div class="">
+              <h3>訓練</h3>
+              <p>
+                剣や魔法を扱う練習ができます。ストーリーモードがある程度進むと選択できなくなります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--職業紹介-->
+      <div class="job-introduction">
+        <h1>職業紹介</h1>
+        <p>
+          ログイン時に簡単な性格診断を受けていただきます。診断結果をもとにこの世界でのあなたの最初の職業を決めます。
+        </p>
+        <div class="container">
+          <div class="job-item flipLeftTrigger">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1559020195.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>勇者</h3>
+              <p>
+                剣と魔法をバランスよく扱えます。どんな状況にも臨機応変に対応できるでしょう。
+              </p>
+            </div>
+          </div>
+          <div class="job-item flipLeftTrigger delay-time05">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1559020184.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>戦士</h3>
+              <p>
+                剣や斧などの扱いに長けており、近距離戦を得意とします。魔法は使えません。
+              </p>
+            </div>
+          </div>
+          <div class="job-item flipLeftTrigger delay-time10">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1559021311.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>僧侶</h3>
+              <p>回復ならお任せ。仲間をサポートします。</p>
+            </div>
+          </div>
+          <div class="job-item flipLeftTrigger delay-time15">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1524031338.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>魔法使い</h3>
+              <p>力はありませんが、魔法を扱います。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--世界観紹介-->
+      <div class="world-introduction">
+        <h1>息をのむ美しい世界</h1>
+        <p>
+          現実世界さながらの臨場感を体験してください。あなたは寝ていることを忘れるかもしれません。
+        </p>
+
+        <div class="world-container-1">
+            <div class="place">
+                <img src="image/desert-790640_1920.jpg" class="world-image" />
+            </div>
+            <div class="place">
+                <h2>砂漠</h2>
+                <p>どこまでも広がる水平線。強い日差しが冒険者の体力を奪います。</p>
+            </div>
+        </div>
+        <div class="world-container-2">
+            <div class="place">
+                <img src="image/mountain-2474133_1920.jpg" class="world-image" />
+            </div>
+            <div class="place">
+                <h2>雪山</h2>
+                <p>美しい銀世界はときに過酷な環境へと豹変します。冒険者には万全の準備に加えて安全なルートを割り出す能力が求められます。</p>
+            </div>
+        </div>
+        <!--よくある質問-->
+        <h1>FAQ</h1>
+        <ul class="accordion-area">
+            <li>
+                <section>
+                    <h3 class="title">現実世界での身体能力はDream Adventureでのキャラクター性能に影響ありますか？</h3>
+                    <div class="box">
+                        <p>ありません。Dream Adventureでのキャラクター性能を決める要素は職業と経験値で決まります。
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">Dream Adventureで出会う人々は全員プレイヤーですか？</h3>
+                    <div class="box">
+                        <p>いいえ、プレイヤーとは限りません。例えば武器屋の店員や城下町の兵士など、Dream Adventureの世界で暮らす人々はプレイヤーではありません。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">冒険中に目覚めてしまった場合、それまで冒険していたキャラクターはどうなりますか？</h3>
+                    <div class="box">
+                        <p>プレイヤーが目覚めた場合、Dream Adventureからログアウトすることになります。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+
+            <!--よくある質問2-->
+<!--             <div class="faq-area">
+                <h1>FAQ</h1>
+                <div class="toggle_contents">
+                    <p class="toggle_title">現実世界での身体能力がDream Adventureでのキャラクター性能に影響ありますか？</p>
+                    <p class="toggle_txt">ありません。Dream Adventureでのキャラクター性能を決める要素は職業と経験値で決まります。</p>
+                </div>
+                
+                <div class="toggle_contents">
+                    <p class="toggle_title">Dream Adventureで出会う人々は全員プレイヤーですか？</p>
+                    <p class="toggle_txt">いいえ、プレイヤーとは限りません。例えば武器屋の店員や城下町の兵士など、Dream Adventureの世界で暮らす人々はプレイヤーではありません。</p>
+                </div>
+                
+                <div class="toggle_contents">
+                    <p class="toggle_title">冒険中に目覚めてしまった場合、それまで冒険していたキャラクターはどうなりますか？</p>
+                    <p class="toggle_txt">プレイヤーが目覚めた場合、Dream Adventureからログアウトすることになります。</p>
+                </div>
+            </div>
+ -->    </main>
+    <footer>
+        <div class="copylight">
+            <p>Copyright © 2021 Dream Adventure. All Rights. Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--ModaalのJavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <!--jquery.cookieのJavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!--ツールチップを出すためのJS-->
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
