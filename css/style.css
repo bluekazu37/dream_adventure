@@ -6,7 +6,7 @@ html {
     line-height: 1.5;
 }
 body {
-    line-height: 32px;
+    line-height: 2rem;
     width:100%;
     font-family: sans-serif;
 }
@@ -17,19 +17,20 @@ img {
     max-width: 100%;
 }
 h1 {
-    margin: 3vw 0;
+    margin: 1vw 0;
 }
 p {
-    margin: 2vw;
+    margin: 1vw;
+
 }
-.delay-time05 {
+.delay-time25 {
+    animation-delay: 0.25s;
+}
+.delay-time50 {
     animation-delay: 0.5s;
 }
-.delay-time10 {
-    animation-delay: 1s;
-}
-.delay-time15 {
-    animation-delay: 1.5s;
+.delay-time75 {
+    animation-delay: 0.75s;
 }
 
 /*---header---*/
@@ -85,7 +86,7 @@ p {
 /*ハンバーガーメニュー*/
 .sideMenu {
     background-color: #fff;
-    height: 17vh;
+    height: 15rem;
     overflow-y: auto;
     padding-top: 56px;
     position: fixed;
@@ -134,7 +135,7 @@ p {
 	content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
 	position: absolute;
 	top:4px;
-	left:-1px;
+	left:0;
 	font-size: 0.6rem;
 	text-transform: uppercase;
 }
@@ -179,7 +180,7 @@ p {
 	content:"Close";/*3つ目の要素のafterにClose表示を指定*/
     transform: translateY(0) rotate(-45deg);
 	top:5px;
-	left:4px;
+	left:5px;
 }
 /* nav-openクラスが付与されると背景透過。visibilityが無いと効果なし。*/
 .nav-open .overlay {
@@ -205,7 +206,7 @@ p {
 
 /*--見出し--*/
 .page-title {
-    font-size: 6vw;
+    font-size: 7vw;
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
 }
@@ -259,7 +260,7 @@ p {
     box-shadow: 0 3px 0 0 #a0522d;/*影の色(rgbaの値を変更)*/
     border-radius: 5px;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 1.75vw;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -302,43 +303,51 @@ p {
 .inner-cap {
     color: black;
     background-color: #fff;
+    font-size: 1rem;
+    text-align: center;
 }
+/*モーダル画面*/
 #start {
     display: none;
 }
-.login-form {
-    display: block;
-    text-align: center;
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20%;
 }
 .text-line {
     border: 1px solid black;
     border-radius: 5px;
     padding: 3px;
     background-color: snow;
+    width: 80%;
 }
 .form-btn {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 0 15px;
     background-color: #CCFFCC;
+    width: 20%;
+    margin: 0 28%;
 }
 /*--トップ画像ここまで--*/
 
 /*--メイン--*/
 .main-content {
     text-align: center;
-    margin-top: 10vw;
+    margin: 10vw 0;
 }
 
 /*--モード選択--*/
 .mode-select {
-    margin-top: 10vw;
+    margin: 10vw 0;
 }
 .container {
     display: flex;
-    margin-top: 3vw;
 }
-
+.mode {
+    margin-bottom: 1rem;
+}
 .item {
     margin: 10px;
     padding: 10px;
@@ -381,7 +390,7 @@ p {
 
 /*--職業紹介--*/
 .job-introduction {
-    margin-top: 100px;
+    margin: 10vw 0;
 }
 
 .job-item {
@@ -417,7 +426,7 @@ p {
 
 /*--世界観紹介--*/
 .world-introduction {
-    margin: 100px 0;
+    margin: 7vw 0;
 }
 
 .world-container-1 {
@@ -443,6 +452,9 @@ p {
 }
 
 /*--よくある質問（アコーディオン全体）--*/
+.faq-area {
+    margin: 7vw 0;
+}
 .accordion-area {
     list-style: none;
     width: 90%;
@@ -508,38 +520,6 @@ p {
     padding: 1%;
 }
 
-/*--よくある質問2（アコーディオン全体）--*/
-.faq-area {
-    margin-top: 100px;
-}
-.toggle_title {
-	line-height: 42px;
-	margin: 0 auto;
-	padding: 10px 0 10px 10px;
-	position: relative;
-	cursor: pointer;
-	transition: 0.3s;
-    border-bottom: 1px solid #ccc;
-    width: 90%;
-}
-.toggle_title:hover {
-	color: #fd7e00;
-}
-.toggle_title:after {
-	content: "";
-	display: inline-block;
-/* 	width: 28px;
-	height: 28px;
- */    content: "\f077";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: bold;
-    font-size: 1.3vw;
-	position:absolute;
-	top: 50%;
-	right: 7px;
-	transform: translateY(-50%) rotate(180deg);
-	transition: 0.2s;
-}
 .toggle_title.selected:after {
 	transform: translateY(-50%);
 	transition: 0.2s;
@@ -591,10 +571,21 @@ footer {
     .top-image p {
         font-size: 1rem;
     }
-        .shiny-btn8 {
+    .shiny-btn8 {
         padding: 5px 0;
         margin: 10px auto;
     }
+    .input-form {
+        padding: 0 15%;
+        margin-right: 10%;
+    }
+    .text-line {
+        width: 120%;
+    }
+    .form-btn {
+        width: 50%;
+        margin: 0 30%;
+    }    
     .container {
         flex-direction: column;
     }
