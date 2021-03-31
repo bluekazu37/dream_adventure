@@ -1,88 +1,267 @@
-// 動きのきっかけの起点となるアニメーションの名前を定義
-function fadeAnime(){
-	$('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
-		var elemPos = $(this).offset().top-50;//要素より、50px上の
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		if (scroll >= elemPos - windowHeight){
-		$(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
-		}else{
-		$(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
-		}
-		});
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Adventure</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <!--ファビコン-->
+    <link rel="icon" type="image/png" href="image/戦のアイコン.png" />
+    <!--ツールチップ出現用のアニメーションを指定するCSS。※導入方法は後程解説。読み込まなくてもフェードインで出現します。-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tippy.js@5.0.3/animations/shift-toward-subtle.css">
+    <!--ツールチップの色を指定するCSS。。※導入方法は後程解説。読み込まなくても黒色で出現します。-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tippy.js@5.0.3/themes/light-border.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+  <body>
+    <!--ヘッダー-->
+    <header class="page-header wrapper">
+      <h1>
+        <a href="index.html"><img src="image/dream_adventure_header_icon-2-cutout.png" class="logo1" /></a>
+      </h1>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="#mode-select">モード選択</a></li>
+          <li><a href="#job-introduction">職業紹介</a></li>
+          <li><a href="#faq-area">FAQ</a></li>
+          <li><a class="js-modal-open" href="">冒険を始める</a></li>
+        </ul>
+      </nav>
+      <!--ハンバーガーメニュー-->
+      <div class="overlay" id="js-overlay"></div><!--ハンバーガーメニュー出現後の黒透過背景-->
+      <div class="hamburger" id="js-hamburger"><!--ハンバーガーアイコン-->
+        <span class="hamburger__lineTop"></span>
+        <span class="hamburger__lineCenter"></span>
+        <span class="hamburger__lineBottom"></span>
+      </div>
+      <div class="sideMenu">
+        <nav>
+          <ul class="sideMenu_nav" id="js-sideMenu_li">
+            <li><a class="sideMenu_li" href="#mode-select">モード選択</a></li>
+            <li><a class="sideMenu_li" href="#job-introduction">職業選択</a></li>
+            <li><a class="sideMenu_li" href="#faq-area">FAQ</a></li>
+            <li><a class="sideMenu_li js-modal-open" href="#">冒険を始める</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <!--トップ画-->
+    <div class="top-image wrapper">
+      <h2 class="page-title">Dream Adventure</h2>
+      <p>寝ているあいだに冒険しませんか</p>
+      <a href="#" class="button btnshine shiny-btn3 shiny-btn8 cap js-modal-open" data-tippy-content="<div class='inner-cap'><p>今なら冒険者応援グッズ<br>プレゼント中！！</p></div>">冒険を始める</a>
+    </div>
+    <!--モーダルログイン画面-->
+      <div class="modal js-modal">
+          <div class="modal__bg js-modal-close"></div><!--背景クリックでモーダル閉じる-->
+          <div class="modal__content"><!--モーダルウィンドウに表示する内容-->
+            <form action="#" class="login-form" id="">
+              <div class="input-form">
+              <label>ID</label>
+              <input class="text-line" type="name" name="name" value="" placeholder="冒険四郎(ゲーム内で表示される名前)"><br>
+              </div>
+              <div class="input-form">
+              <label>メールアドレス</label>
+              <input class="text-line" type="email" name="email-address" value="" placeholder="xxxx@example.com"><br>
+              </div>
+              <div class="input-form">
+              <label>パスワード</label>
+              <input class="text-line" type="password" name="password" value="" minlength="8" placeholder="半角英数字8文字以上"><br>
+              </div>
+              <div class="input-form">
+              <input class="form-btn js-modal-close" id="js-registration" type="submit" value="登録">
+              </div>
+            </form>
+          </div><!--modal__inner-->
+      </div><!--modal-->
 
-    $('.flipLeftTrigger').each(function(){ //flipLeftTriggerというクラス名が
-		var elemPos = $(this).offset().top-50;//要素より、50px上の
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		if (scroll >= elemPos - windowHeight){
-		$(this).addClass('flipLeft');// 画面内に入ったらflipLeftというクラス名を追記
-		}else{
-		$(this).removeClass('flipLeft');// 画面外に出たらflipLeftというクラス名を外す
-		}
-		});
-    }
+    <!--About-->
+    <main class="main-content">
+      <div class="about">
+        <h1>About</h1>
+        <p>最近ワクワクしてますか？</p>
+        <p>Dream Adventureでは寝ているあいだに冒険を楽しめます。</p>
+        <p>冒険を進める主人公はあなた自身です。</p>
+        <p>さぁ冒険に出かけましょう！</p>  
+      </div>
+      <!--モード選択-->
+      <div class="mode-select" id="mode-select">
+        <h1>モード選択</h1>
+        <p>
+          睡眠に入る前に選択してください。睡眠に入ると選択したモードを開始することができます。
+        </p>
+        <div class="container">
+          <div class="item fadeUpTrigger">
+            <div class="mode">
+              <a href="#"></a>
+              <span class="mask">
+              <img src="image/italy-2273767_1920.jpg" class="mode-pic" />
+              </span>
+            </div>
+            <div class="">
+              <h3>ストーリー</h3>
+              <p>
+                魔王に支配された世界に平和をもたらすために始まりの街から冒険を始めましょう。倒れてしまうと3日間プレイできなくなります。
+              </p>
+            </div>
+          </div>
+          <div class="item fadeUpTrigger delay-time25">
+            <div class="mode">
+              <a href="#"></a>
+              <span class="mask">
+              <img src="image/colosseum-4308831_1920.jpg" class="mode-pic" />
+            </span>
+            </div>
+            <div class="">
+              <h3>闘技場</h3>
+              <p>
+                ストーリーモードで鍛えた力を使い、次々と現れる敵と闘います。倒れてもペナルティはありません。
+              </p>
+            </div>
+          </div>
+          <div class="item fadeUpTrigger delay-time50">
+            <div class="mode">
+              <a href="#"></a>
+              <span class="mask">
+              <img src="image/road-sign-798175_1920.jpg" class="mode-pic" />
+            </span>
+            </div>
+            <div class="">
+              <h3>訓練</h3>
+              <p>
+                剣や魔法を扱う練習ができます。ストーリーモードがある程度進むと選択できなくなります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-// 画面をスクロールをしたら動かしたい場合の記述
-$(window).scroll(function (){
-    fadeAnime();/* アニメーション用の関数を呼ぶ*/
-});// ここまで画面をスクロールをしたら動かしたい場合の記述
+      <!--職業紹介-->
+      <div class="job-introduction" id="job-introduction">
+        <h1>職業紹介</h1>
+        <p>
+          ログイン時に簡単な性格診断を受けていただきます。診断結果をもとにこの世界でのあなたの最初の職業を決めます。
+        </p>
+        <div class="container">
+          <div class="job-item flipLeftTrigger">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1559020195.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>勇者</h3>
+              <p>
+                剣と魔法をバランスよく扱えます。どんな状況にも臨機応変に対応できるでしょう。
+              </p>
+            </div>
+          </div>
+          <div class="job-item flipLeftTrigger delay-time25">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1559020184.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>戦士</h3>
+              <p>
+                剣や斧などの扱いに長けており、近距離戦を得意とします。魔法は使えません。
+              </p>
+            </div>
+          </div>
+          <div class="job-item flipLeftTrigger delay-time50">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1559021311.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>僧侶</h3>
+              <p>回復ならお任せ。仲間をサポートします。</p>
+            </div>
+          </div>
+          <div class="job-item flipLeftTrigger delay-time75">
+            <div class="job">
+              <a href="#"></a>
+              <img src="image/1524031338.png" class="job-icon" />
+            </div>
+            <div class="">
+              <h3>魔法使い</h3>
+              <p>力はありませんが、魔法を扱います。</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-//ハンバーガーメニュー
-function toggleNav() {
-    const body = document.body;
-    const hamburger = document.getElementById("js-hamburger");
-    const overlay = document.getElementById("js-overlay");
-    const sideMenu_li = document.getElementById("js-sideMenu_li");
-    const registration = document.getElementById("js-registration");
-    hamburger.addEventListener("click", function () {
-      body.classList.toggle("nav-open");
-    });
-    overlay.addEventListener("click", function () {
-      body.classList.remove("nav-open");
-    });
-    sideMenu_li.addEventListener("click", function () {
-        body.classList.remove("nav-open");
-      });
-    registration.addEventListener("click", function () {
-        body.classList.remove("nav-open");
-      });
-    }
-  toggleNav();
+      <!--世界観紹介-->
+      <div class="world-introduction">
+        <h1>息をのむ美しい世界</h1>
+        <p>
+          現実世界さながらの臨場感を体験してください。あなたは寝ていることを忘れるかもしれません。
+        </p>
 
-//モーダルログイン画面
-$(function(){
-    $('.js-modal-open').on('click',function(){
-        $('.js-modal').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
-    });
-});
+        <div class="world-container-1">
+            <div class="place">
+                <img src="image/desert-790640_1920.jpg" class="world-image" />
+            </div>
+            <div class="place">
+                <h2>砂漠</h2>
+                <p>どこまでも広がる水平線。強い日差しが冒険者の体力を奪います。</p>
+            </div>
+        </div>
+        <div class="world-container-2">
+            <div class="place">
+                <img src="image/mountain-2474133_1920.jpg" class="world-image" />
+            </div>
+            <div class="place">
+                <h2>雪山</h2>
+                <p>美しい銀世界はときに過酷な環境へと豹変します。冒険者には万全の準備に加えて安全なルートを割り出す能力が求められます。</p>
+            </div>
+        </div>
+        <!--よくある質問-->
+        <div class="faq-area" id="faq-area">
+        <h1>FAQ</h1>
+        <ul class="accordion-area">
+            <li>
+                <section>
+                    <h3 class="title">現実世界での身体能力はDream Adventureでのプレイヤー性能に影響ありますか？</h3>
+                    <div class="box">
+                        <p>ありません。プレイヤー性能は職業とDream Adventureで得られた経験値で決まります。
+                        </p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">Dream Adventureで出会う人々は全員プレイヤーですか？</h3>
+                    <div class="box">
+                        <p>いいえ、プレイヤーとは限りません。例えば武器屋の店員や城下町の兵士など、Dream Adventureの世界で暮らす人々はプレイヤーではありません。</p>
+                    </div>
+                </section>
+            </li>
+            <li>
+                <section>
+                    <h3 class="title">冒険中に目覚めてしまった場合、それまで冒険していたプレイヤーはどうなりますか？</h3>
+                    <div class="box">
+                        <p>一時的にDream Adventureの世界から消滅します。次回ログインしたときは前回消滅した場所で復活し、冒険を再開することになります。<br>復活予定の場所がなんらかの理由でなくなっていた場合は。。。</p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        </div>
 
-//ボタンの上にくると表示
-tippy('.cap', {
-    placememt: 'top-start',
-    animation: 'shift-toward-subtitle',
-    theme: 'light-border',
-    duration: 200,
-})
-
-$('.title').on('click', function(){ //タイトル要素をクリックしたら
-    var findEllm = $(this).next(".box"); //直後のアコーディオンを行うエリアを取得し
-    $(findEllm).slideToggle(); //アコーディオンの上下動作
-    if($(this).hasClass('close')){ //タイトル要素にクラス名closeがあれば
-        $(this).removeClass('close'); //クラス名を除去し
-    }else{ //それ以外は
-        $(this).addClass('close'); //クラス名closeを付与
-    }
-});
-
-$(function(){
-	$('.toggle_title').click(function(){
-		$(this).toggleClass('selected');
-		$(this).next().slideToggle();
-	});
-});
+    </main>
+    <footer>
+        <div class="copylight">
+            <p>Copyright © 2021 Dream Adventure. All Rights. Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--jquery.cookieのJavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!--ツールチップを出すためのJS-->
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
