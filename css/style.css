@@ -562,6 +562,7 @@ footer {
     }
     body {
         line-height: 20px;
+        overflow-x: hidden;
     }
     .page-header {
         height: 7%;
