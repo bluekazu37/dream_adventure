@@ -577,7 +577,11 @@ footer {
       }    
     .modal__content{
         width: 70%;
-    }    
+    }
+    .job-item {
+        margin: 0.25em;
+        padding: 0.25em;
+    }
 }
 /*--スマホ--*/
 @media (max-width: 480px) {
