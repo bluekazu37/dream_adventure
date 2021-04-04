@@ -226,7 +226,7 @@ p {
     box-shadow: 0 3px 0 0 #a0522d;/*影の色(rgbaの値を変更)*/
     border-radius: 5px;
     font-weight: bold;
-    font-size: 1.75vw;
+    font-size: 1.25rem;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -555,7 +555,7 @@ footer {
 @media (max-width: 768px) {
     .main-nav {
         font-size: 1rem;
-    }    
+    }
     .main-nav li {
         margin-left: 1em;
     }
@@ -574,7 +574,7 @@ footer {
     }
     .shiny-btn8::after {
         font-size: 0.9rem;
-      }    
+    }
     .modal__content{
         width: 70%;
     }
