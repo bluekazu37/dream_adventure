@@ -554,10 +554,10 @@ footer {
 /*--タブレット--*/
 @media (max-width: 768px) {
     .main-nav {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }    
     .main-nav li {
-        margin-left: 1.5em;
+        margin-left: 1em;
     }
     .top-image {
         padding: 10rem 0 5rem 0;
