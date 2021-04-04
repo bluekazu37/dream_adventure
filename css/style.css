@@ -17,10 +17,10 @@ img {
     max-width: 100%;
 }
 h1 {
-    margin: 1vw 0;
+    margin: 1em 0;
 }
 p {
-    margin: 1vw;
+    margin: 1em;
 
 }
 .delay-time25 {
@@ -38,7 +38,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10vh;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@ p {
     list-style: none;
 }
 .main-nav li {
-    margin-left: 40px;
+    margin-left: 2.5em;
     position: relative;
 }
 .main-nav li a:hover {
@@ -197,23 +197,22 @@ p {
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    min-width: 100vw;
     text-align:center;
-    padding: 300px 0;
+    padding: 20rem 0 15rem 0;
     color: white;
-    margin-top: 7vh;
+    margin-top: 5rem;/*--ヘッダーとの重なりを避ける--*/
 }
 
 /*--見出し--*/
 .page-title {
-    font-size: 7vw;
+    font-size: 4.5rem;
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
 }
 
 .top-image p {
-    font-size: 2vw;
-    margin: 3vw 0;
+    font-size: 2rem;
+    margin: 3rem 0;
 }
 
   /*--クリック前から光るボタン8--*/
@@ -221,9 +220,9 @@ p {
     display: block;
     position: relative;
     width: 20%;/*ボタンの幅*/
-    padding: 10px 0;
-    margin: 30px auto;
-    background-color: #ff8c00;/*ボタンの色*/
+    padding: 0.75em 0;
+    margin: 2em auto;
+    background: linear-gradient(to bottom right, red, orange);/*ボタンの色*/
     box-shadow: 0 3px 0 0 #a0522d;/*影の色(rgbaの値を変更)*/
     border-radius: 5px;
     font-weight: bold;
@@ -257,7 +256,7 @@ p {
   .shiny-btn8::after {
     content: "\f054";
     font-family: 'Font Awesome 5 Free';
-    font-size: 1.3vw;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-left: 0.5em;
   }
@@ -272,6 +271,8 @@ p {
     background-color: #fff;
     font-size: 1rem;
     text-align: center;
+    z-index: 1;
+    ]
 }
 /*モーダル画面*/
 /* #start {
@@ -471,7 +472,6 @@ p {
     width: 90%;
     display: inline-block;
     text-align: center;
-    min-width: 400px;
 }
 
 .accordion-area li {
@@ -551,25 +551,50 @@ footer {
     font-size: 0.7rem;
 }
 
-/*--モバイル版--*/
-@media (max-width: 600px) {
+/*--タブレット--*/
+@media (max-width: 768px) {
+    .main-nav {
+        font-size: 1.1rem;
+    }    
+    .main-nav li {
+        margin-left: 1.5em;
+    }
+    .top-image {
+        padding: 10rem 0 5rem 0;
+    }
+    .page-title {
+        font-size: 3rem;
+    }
+    .top-image p {
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    .top-image a {
+        font-size: 1rem;
+    }
+    .shiny-btn8::after {
+        font-size: 0.9rem;
+      }    
+    .modal__content{
+        width: 70%;
+    }    
+}
+/*--スマホ--*/
+@media (max-width: 480px) {
     html {
         font-size: 80%;
     }
     p {
         display: inline-block;
         width: 80%;
+        margin: 0.25em;
     }
     body {
         line-height: 20px;
         overflow-x: hidden;
     }
     .page-header {
-        height: 7%;
         justify-content: center;
-    }
-    .logo1 {
-        width: 9rem;
     }
     .hamburger {
         display: inline;
@@ -578,14 +603,23 @@ footer {
         display: none;
     }
     .top-image {
-        padding: 100px 0;
+        padding: 5rem 0;
     }
+    .page-title {
+        font-size: 2rem;
+    }    
     .top-image p {
         font-size: 1rem;
     }
+    .top-image a {
+        font-size: 1rem;
+    }
     .shiny-btn8 {
-        padding: 5px 0;
-        margin: 10px auto;
+        width: 32%;
+        margin: 0.5em auto;
+    }
+    .shiny-btn8::after {
+        font-size: 1rem;
     }
     .inner-cap {
         z-index: -1;
