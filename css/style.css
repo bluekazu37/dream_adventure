@@ -272,7 +272,6 @@ p {
     font-size: 1rem;
     text-align: center;
     z-index: 1;
-    ]
 }
 /*モーダル画面*/
 /* #start {
@@ -332,17 +331,18 @@ p {
 /*--メイン--*/
 .main-content {
     text-align: center;
-    margin: 10vw 0;
 }
-
+.about {
+    padding: 5rem 0;
+}
 /*--モード選択--*/
 .mode-select h1 {
     display: block;
-    padding-top: 13vh;
-    margin-top: -10vh;
 }
 .mode-select {
-    margin: 10vw 0;
+    padding-bottom: 2rem;
+    padding-top: 7vh;
+    background-color:  #EEEEEE;
 }
 .container {
     display: flex;
@@ -434,29 +434,66 @@ p {
 /*--世界観紹介--*/
 .world-introduction {
     margin: 7vw 0;
+    padding: 2rem 0;
+    background-color:  #EEEEEE;
+    z-index: -1;
 }
 
 .world-container-1 {
+    position: relative;/*背景キラキラの位置を上揃え*/
     display: flex;
-    justify-content: center;
+    flex-direction: row-reverse;
     align-items: center;
 }
 
 .world-container-2 {
+    position: relative;/*背景キラキラの位置を上揃え*/
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row-reverse;
 }
-
-.place {
+.world-des {
+    display: flex;
+    justify-content: center;
+    height: 100%;
     width: 50%;
-    padding: 0 10px;
 }
-
-.place p {
-    color: gray;
+#particles-js{
+	position:absolute;/*world-container-1の位置に合わせる*/
+	z-index:2;/*描画を一番下に*/
+	background:linear-gradient(to bottom right, orange, brown);/*背景色*/
+    top: 0;
+    height: 100%;
 }
+#snow-js{
+	position:absolute;/*world-container-1の位置に合わせる*/
+	z-index:2;/*描画を一番下に*/
+	background-color:#070A31;/*背景色*/
+    top: 0;
+    height: 100%;
+}
+#star{
+    z-index: 3;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+}
+#star{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+#star h2 {
+    color: white;
+}
+#star p {
+    color: gainsboro;
+}
+.world-pic {
+    width: 50%;
+    z-index: 3;
+    margin-bottom: -10px;
+}
+  
 
 /*--よくある質問（アコーディオン全体）--*/
 #faq-area h1 {
@@ -552,7 +589,7 @@ footer {
 }
 
 /*--タブレット--*/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .main-nav {
         font-size: 1rem;
     }
@@ -584,7 +621,7 @@ footer {
     }
 }
 /*--スマホ--*/
-@media (max-width: 480px) {
+@media (max-width: 479px) {
     html {
         font-size: 80%;
     }
@@ -601,7 +638,7 @@ footer {
         justify-content: center;
     }
     .hamburger {
-        display: inline;
+        display: inline-block;
     }
     .main-nav {
         display: none;
@@ -640,21 +677,38 @@ footer {
     }
     .job-item {
         width: 100%;
-        margin-bottom: 50px;
     }
     .job-icon {
         width: 40%;
     }
+    .world-introduction {
+        padding-top: 1rem;
+    }
     .world-container-1 {
-        flex-direction: column;
-        margin-bottom: 50px;
+        flex-direction: column-reverse;
     }
     .world-container-2 {
-        flex-direction: column;
-        margin-bottom: 50px;
+        flex-direction: column-reverse;
     }
-    .place {
-        width: 100%;
+    .world-des {
+        width: 90%;
+        padding: 1rem 0;
+    }
+    #particles-js{
+        height: 100%;
+    }
+    #snow-js{
+        height: 100%;
+    }
+    #star h2 {
+        color: white;
+    }
+    #star p {
+        color: gainsboro;
+    }
+    .world-pic {
+        width: 90%;
+        padding-top: 1rem;
     }
     .toggle_title {
         line-height: 20px;
