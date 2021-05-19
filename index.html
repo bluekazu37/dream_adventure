@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dream Adventure</title>
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <!--ファビコン-->
     <link rel="icon" type="image/png" href="image/戦のアイコン.png" />
     <!--ツールチップ出現用のアニメーションを指定するCSS。※導入方法は後程解説。読み込まなくてもフェードインで出現します。-->
@@ -40,7 +40,7 @@
         <nav>
           <ul class="sideMenu_nav" id="js-sideMenu_li">
             <li><a class="sideMenu_li" href="#mode-select">モード選択</a></li>
-            <li><a class="sideMenu_li" href="#job-introduction">職業選択</a></li>
+            <li><a class="sideMenu_li" href="#job-introduction">職業紹介</a></li>
             <li><a class="sideMenu_li" href="#faq-area">FAQ</a></li>
             <li><a class="sideMenu_li js-modal-open" href="#">冒険を始める</a></li>
           </ul>
@@ -196,30 +196,30 @@
       <!--世界観紹介-->
       <div class="world-introduction">
         <h1>息をのむ美しい世界</h1>
-        <p>
-          現実世界さながらの臨場感を体験してください。あなたは寝ていることを忘れるかもしれません。
-        </p>
-
+        <p>現実世界さながらの臨場感を体験してください。あなたは寝ていることを忘れるかもしれません。</p>
         <div class="world-container-1">
-            <div class="place">
-                <img src="image/desert-790640_1920.jpg" class="world-image" />
+          <div class="world-des">
+            <div id="particles-js"></div>
+            <div id="star">
+              <h2>砂漠</h2>
+              <p>どこまでも広がる水平線。強い日差しが冒険者の体力を奪います。</p>
             </div>
-            <div class="place">
-                <h2>砂漠</h2>
-                <p>どこまでも広がる水平線。強い日差しが冒険者の体力を奪います。</p>
-            </div>
+          </div>
+          <div class="world-pic"><img src="image/desert-790640_1920.jpg"/></div>
         </div>
         <div class="world-container-2">
-            <div class="place">
-                <img src="image/mountain-2474133_1920.jpg" class="world-image" />
+          <div class="world-des">
+            <div id="snow-js"></div>
+            <div id="star">
+              <h2>雪山</h2>
+              <p>美しい銀世界はときに過酷な環境へと豹変します。冒険者には万全の準備に加えて安全なルートを割り出す能力が求められます。</p>
             </div>
-            <div class="place">
-                <h2>雪山</h2>
-                <p>美しい銀世界はときに過酷な環境へと豹変します。冒険者には万全の準備に加えて安全なルートを割り出す能力が求められます。</p>
-            </div>
+          </div>
+          <div class="world-pic"><img src="image/mountain-2474133_1920.jpg"/></div>
         </div>
-        <!--よくある質問-->
-        <div class="faq-area" id="faq-area">
+      </div>
+      <!--よくある質問-->
+      <div class="faq-area" id="faq-area">
         <h1>FAQ</h1>
         <ul class="accordion-area">
             <li>
@@ -248,7 +248,7 @@
                 </section>
             </li>
         </ul>
-        </div>
+      </div>
 
     </main>
     <footer>
@@ -257,11 +257,15 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--星キラキラ-->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!--jquery.cookieのJavaScript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <!--ツールチップを出すためのJS-->
     <script src="https://unpkg.com/popper.js@1"></script>
     <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="js/5-9.js"></script>
+    <script src="js/5-5.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
